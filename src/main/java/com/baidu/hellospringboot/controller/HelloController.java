@@ -1,6 +1,6 @@
-package com.baidu.hellospringboot.Controller;
+package com.baidu.hellospringboot.controller;
 
-import com.baidu.hellospringboot.entity.Student;
+import com.baidu.hellospringboot.entity.StudentTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +16,7 @@ public class HelloController {
     @Value("${name}")
     private String myname;
     @Autowired
-    private Student student;
+    private StudentTest student;
     @RequestMapping(value = {"/hello1","hi"},method = RequestMethod.GET)
     public String show1(){
         return "hello spring-boot "+myname;
@@ -40,4 +40,6 @@ public class HelloController {
         return myid+"";
 
     }
+
+
 }

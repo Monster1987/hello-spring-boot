@@ -1,9 +1,7 @@
 package com.baidu.hellospringboot.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 /**
  * @Auther:zcf
@@ -11,28 +9,14 @@ import javax.persistence.Id;
  * @Descirption:com.baidu.hellospringboot.entity
  * @version:1.0
  */
-@Entity
-public class Student {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+@ConfigurationProperties(prefix = "student")
+@Component
+public class StudentTest {
     private String name;
     private int age;
 
-    //必须要有无参的
-    public Student() {
-    }
-
     public String getName() {
         return name;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public void setName(String name) {

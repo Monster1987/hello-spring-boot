@@ -1,7 +1,7 @@
 server:
   port: 8082
   servlet:
-    context-path: /springboot
+    context-path: /spring
 name: zcf
 student:
   name: tom
